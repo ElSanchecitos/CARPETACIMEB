@@ -1,5 +1,5 @@
-var mongoose=require("../src/conexBD/conn");
-var Cita=require("../models/Cita");
+
+var Cita=require("../models/Usuarios");
 
 function prueba(req,res){
     // res.status(200).send({

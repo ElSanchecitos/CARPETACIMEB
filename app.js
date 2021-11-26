@@ -16,5 +16,5 @@ res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
 next();
 });
 
-app.use(require('./routers/routes'));
+app.use(require('./routers/routers'));
 module.exports = app;
