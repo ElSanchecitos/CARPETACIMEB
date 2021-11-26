@@ -1,0 +1,28 @@
+
+
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/"> 
+      ◄ Pedir un transporte ►  
+    </a>
+  </nav>
+  
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="card-title">
+       Ingrese los datos para pedir un transporte   ▼
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.nombre" placeholder="Escriba su nombre" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.identificacion" placeholder="Escriba su identificación" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.direccion" placeholder="Escriba su dirección" class="form-control">
+    </div>
+    <button (click)="editarGuardar" class="btn btn-primary" >
+      Solicitar el transporte
+   </button> 
+  
+  </div>
+  </div>

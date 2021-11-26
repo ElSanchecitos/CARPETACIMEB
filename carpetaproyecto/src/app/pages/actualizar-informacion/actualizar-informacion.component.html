@@ -1,0 +1,70 @@
+
+
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/"> 
+      Actualizar informacion del usuario 
+    </a>
+  
+  </nav>
+  
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="card-title">
+       Ingrese su identificación y modifique los datos que desee, tambien pude borrar su usario  ▼
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.identificacion" placeholder="Escriba su identificación" class="form-control">
+    </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mt-4">
+          <ul class="list-group">
+                  <li *ngFor="let e of usuarioArr"
+                  class='list-group-item list-group-item-action' (click)="editar(selectedEmp)"[class.active]="e == selectedEmp">
+                  {{e.nombre}} - {{e.identificacion}} - {{e.edad}} - {{e.telefono}} - {{e.direccion}} - {{e.telefono}}
+                </li>
+          </ul>
+         
+        </div> 
+         
+        </div>
+      </div>
+  
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.nombre" placeholder="Escriba su nombre" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.edad" placeholder="Escriba su edad" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.telefono" placeholder="Escriba su telefono" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.direccion" placeholder="Escriba su direccion" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.correo" placeholder="Escriba su correo" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.tipoDeSangre" placeholder="Escriba su tipo de sangre" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.peso" placeholder="Escriba su peso" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.estatura" placeholder="Escriba su estatura" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.genero" placeholder="Escriba su género" class="form-control">
+    </div>
+    <button (click)="editarGuardar" class="btn btn-primary" >
+      Actualizar Datos
+   </button> 
+   <button (click)="editarGuardar" class="btn btn-warning" >
+    Eliminar usuario
+  </button> 
+  
+  </div>
+  </div>
+

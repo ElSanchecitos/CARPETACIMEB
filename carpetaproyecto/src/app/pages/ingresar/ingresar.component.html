@@ -1,0 +1,26 @@
+
+
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/"> 
+      Ingresar 
+    </a>
+  
+  </nav>
+  
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="card-title">
+       Ingrese su usuario y contraseña
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.nombre" placeholder="Escriba su usuario" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.identificacion" placeholder="Escriba contraseña" class="form-control">
+    </div>
+    <button (click)="editarGuardar" class="btn btn-primary" >
+      Ingresar
+   </button> 
+  
+  </div>
+  </div>
