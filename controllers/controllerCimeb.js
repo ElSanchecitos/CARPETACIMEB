@@ -9,7 +9,7 @@ function prueba(req,res){
         );
     }
 
-function saveCita(req,res){
+function saveUsuario(req,res){
     var miCita= new Cita(req.body);
     miCita.save((err,result)=>{
     res.status(200).send({message:result});
@@ -53,7 +53,7 @@ function buscarCita(req,res){
 
 module.exports={
     prueba,
-    saveCita, 
+    saveUsuario, 
     listarAllCita, 
     buscarCita
 }
