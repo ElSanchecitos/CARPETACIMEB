@@ -1,5 +1,5 @@
 
-var Cita=require("../models/Usuarios");
+var Paciente=require("../models/pacientes");
 
 function prueba(req,res){
     // res.status(200).send({
@@ -9,19 +9,19 @@ function prueba(req,res){
         );
     }
 
-function saveUsuario(req,res){
-    var miCita= new Cita(req.body);
-    miCita.save((err,result)=>{
+function savePaciente(req,res){
+    var miPaciente= new Paciente(req.body);
+    miPaciente.save((err,result)=>{
     res.status(200).send({message:result});
     });
     }
 
-    function listarAllCita(req,res){
-        var idCita=req.params.id;
-        if(!idCita){
-            var result=Cita.find({}).sort('nombre');
+    function listarAllPaciente(req,res){
+        var idPaciente=req.params.id;
+        if(!idPaciente){
+            var result=Paciente.find({}).sort('nombre');
         }else{
-            var result=Cita.find({_id:idCita});
+            var result=Paciente.find({_id:idPaciente});
         }
         result.exec(function(err,result){
         if(err){
@@ -36,9 +36,9 @@ function saveUsuario(req,res){
         })
         }
 
-function buscarCita(req,res){
-    var idCita=req.params.id;
-    Cita.findById(idCita).exec((err,result)=>{
+function buscarPaciente(req,res){
+    var idPaciente=req.params.id;
+    Paciente.findById(idPaciente).exec((err,result)=>{
     if(err){
         res.status(500).send({message:'Error al momento de ejecutar la solicitud'});
     }else{
@@ -51,9 +51,39 @@ function buscarCita(req,res){
     });
     }
 
+    function updatePaciente(req,res){
+        //var id = mongoose.Types.ObjectId(req.query.productId);
+        var idPaciente = req.params.id;
+        Paciente.findOneAndUpdate({_id: idPaciente}, req.body, {new: true}, function(err, Paciente) {
+            if (err)        
+            res.send(err);
+            res.json(Paciente);
+        });
+        };
+    
+    
+    
+    function deletePaciente(req,res){
+        var idPaciente=req.params.id;
+        Paciente.findByIdAndRemove(idPaciente, function(err, Paciente){
+        if(err) {
+        return res.json(500, {
+        message: 'Error al momento de ejecutar la solicitud'
+        })
+        }
+        return res.json(Paciente)
+        //return res.status(200).send('Paciente eliminado con exito')
+        });
+    }
+    
+
+
 module.exports={
     prueba,
-    saveUsuario, 
-    listarAllCita, 
-    buscarCita
+    savePaciente, 
+    listarAllPaciente, 
+    buscarPaciente,
+    updatePaciente,
+    deletePaciente
+
 }
