@@ -1,6 +1,7 @@
 
 var Paciente=require("../models/pacientes");
 
+
 function prueba(req,res){
     // res.status(200).send({
     // message: 'probando la acción Satisfactoriamente......'
